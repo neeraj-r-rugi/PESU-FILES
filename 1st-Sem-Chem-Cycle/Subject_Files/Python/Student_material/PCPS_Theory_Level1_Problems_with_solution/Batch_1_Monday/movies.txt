@@ -1,0 +1,20 @@
+Action, Christopher Nolan, Inception
+Action, Christopher Nolan, The Dark Knight
+Drama, Steven Spielberg, Schindler's List
+Drama, Quentin Tarantino, Pulp Fiction
+Comedy, Edgar Wright, Hot Fuzz
+Action, James Cameron, Terminator 2
+Comedy, Wes Anderson, The Grand Budapest Hotel
+Drama, Christopher Nolan, Dunkirk
+Action, Quentin Tarantino, Kill Bill: Volume 1
+Action, James Cameron, Avatar
+Sci-Fi, Ridley Scott, Blade Runner
+Action, Martin Scorsese, The Departed
+Sci-Fi, Ridley Scott, Blade Runner
+Action, Martin Scorsese, The Departed
+Sci-Fi, Ridley Scott, Blade Runner
+Action, Martin Scorsese, The Departed
+Sci-Fi, Ridley Scott, Blade Runner
+Action, Martin Scorsese, The Departed
+Sci-Fi, Ridley Scott, Blade Runner
+Action, Martin Scorsese, The Departed

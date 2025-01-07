@@ -1,0 +1,9 @@
+Keynote: The Future of AI, Dr. Jane Smith, 09:00 AM
+Panel: Ethics in AI, Dr. John Doe, 10:00 AM
+Workshop: Machine Learning Basics, Prof. Alice Johnson, 11:00 AM
+Talk: AI in Healthcare, Dr. Emily Davis, 12:00 PM
+Panel: AI and Society, Dr. Jane Smith, 01:00 PM
+Talk: AI for Good, Prof. Bob Brown, 02:00 PM
+Workshop: Advanced Neural Networks, Prof. Alice Johnson, 03:00 PM
+Keynote: AI and the Future Workforce, Dr. John Doe, 04:00 PM
+Talk: AI in Education, Dr. Emily Davis, 05:00 PM

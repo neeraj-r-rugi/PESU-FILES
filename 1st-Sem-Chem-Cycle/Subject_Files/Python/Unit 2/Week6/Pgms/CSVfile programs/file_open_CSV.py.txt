@@ -1,0 +1,15 @@
+import csv
+s1 = set()
+c = 0
+with open('matches111.csv') as file:
+    csvFile = csv.reader(file)
+    print(type(csvFile), csvFile)
+    for lines in csvFile:
+       # s1.add(lines[1])
+       if lines[1] == "2009":
+        c = c+1
+    ''' for lines in csvFile:
+        lines.
+    '''
+print(file.closed)
+print(len(s1), c)

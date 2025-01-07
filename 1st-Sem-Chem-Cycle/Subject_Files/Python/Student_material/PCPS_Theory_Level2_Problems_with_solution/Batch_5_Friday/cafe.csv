@@ -1,0 +1,55 @@
+Item Name,Category,Price
+Cappuccino,Beverage,3.50
+Latte,Beverage,4.00
+Espresso,Beverage,2.50
+Americano,Beverage,3.00
+Iced Tea,Beverage,2.00
+Hot Chocolate,Beverage,3.25
+Mocha,Beverage,3.75
+Macchiato,Beverage,3.00
+Flat White,Beverage,4.50
+Chai Latte,Beverage,4.00
+Black Coffee,Beverage,2.25
+Green Tea,Beverage,2.50
+Herbal Tea,Beverage,2.75
+Fruit Smoothie,Beverage,5.00
+Ice Cream Sundae,Dessert,4.50
+Chocolate Cake,Dessert,3.00
+Fruit Salad,Dessert,4.00
+Cheesecake,Dessert,5.50
+Tiramisu,Dessert,6.00
+Brownie,Dessert,2.50
+Croissant,Breakfast,2.00
+Bagel,Breakfast,2.50
+Muffin,Breakfast,3.00
+Pancakes,Breakfast,6.00
+French Toast,Breakfast,5.50
+Egg Sandwich,Snack,3.75
+Cheese Sandwich,Snack,5.00
+Veg Sandwich,Snack,4.50
+Chicken Sandwich,Snack,6.00
+BLT Sandwich,Snack,5.25
+Club Sandwich,Snack,6.50
+Wrap,Snack,4.75
+Caesar Salad,Snack,5.00
+Caprese Salad,Snack,6.00
+French Fries,Snack,2.00
+Onion Rings,Snack,2.50
+Garlic Bread,Snack,3.00
+Mozzarella Sticks,Snack,4.50
+Fried Chicken Wings,Wings,8.00
+BBQ Chicken Wings,Wings,8.50
+Buffalo Wings,Wings,9.00
+Spicy Wings,Wings,7.50
+Chicken Nuggets,Snack,5.00
+Vegetable Spring Rolls,Snack,4.00
+Hummus with Pita,Snack,3.50
+Fried Rice,Main Course,7.00
+Pasta Primavera,Main Course,8.50
+Spaghetti Bolognese,Main Course,9.00
+Grilled Cheese,Main Course,6.00
+Veg Burger,Main Course,5.50
+Beef Burger,Main Course,6.50
+Chicken Burger,Main Course,7.00
+Fish and Chips,Main Course,8.00
+Steak Sandwich,Main Course,9.50

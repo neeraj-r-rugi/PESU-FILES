@@ -1,0 +1,46 @@
+Function:	
+	A set of statements written inside a block and given a name.These statements will be executed when the block is called with its name.
+	A subprogram which helps in accomplishing a given task
+
+All functions constitute into a big enterprise and results in million lines of code.
+Example: YouTube, Facebook, Social Network
+
+If all the code is in a single sequence, we will not be able to manage it. So parts of code is required and thus modularity was brought into picture. This is how the industry works.
+It is good and easier for people to develop  the modules and finally integrate	
+
+Advantages of using functions in python:
+	Brings modularity
+	Increases readability
+	Memory is conserved i.e., repeated invocations of the same function	
+
+
+1. Redraw the diagram discussed in class, written for two functions in monolithic programming languages
+	f1  consumes 10Kb    
+	f2  consumes  100Kb
+Function call is replaced with suite
+
+2. Use of context switching
+Redraw the diagram discussed in class. There is only one copy of f1 and f2. Sharing of functions happen. When the function is in use, context switching happens
+This avoids repeatition and readability is increased
+
+Process Control Block(PCB)
+	Process is a program in execution. PCB is used to manage the processes.
+Python code executes on interpreter/hardware and finally executed on CPU. But we have only handful of registers for both main and sub program. Hence requires context switching. The current context is stored in PCB
+
+How to define a function in Python?
+	def fname([parameters]):   #leader/ header
+		statements			#suite
+where def - keyword
+          fname - valid identifier
+          parameters - optional ones
+
+
+All functions are associated with definition, call and return values
+
+definition: leader and suite is defined and kept ready for calling it. When interpreter sees this line, leader is processed. It means, entry is made in symbol table with name of the function/address and parameters
+
+call: ( ) is the call operator. No : in the function call. If the entry for paricular function is available in symbol table, suite is processed. Else it is a NameError
+
+return:
+	Value - returning function: return type is of any type. Explicit return keyword is required with a type other than None.
+	Non - value returning function: return type is None for a function implicitly
