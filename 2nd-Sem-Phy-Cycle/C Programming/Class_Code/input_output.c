@@ -2,6 +2,8 @@
 #include <stdbool.h>
 #include <limits.h>
 #include <float.h>
+
+
 /*
 	Name: Neeraj
 	Mental Status: Unstable, Implosion Immeinient.
@@ -26,7 +28,7 @@ void main(){
 	printf("The lennght of previous output is: %i (new lines is a character, the value format specifer replaces is also considered and added.)\n", length);
 	printf("Letter\b 'r' is deleted\n");
 	printf("Magic\r\n");//If any character is present after /r then it is replaced completely in GCC
-	printf("\"Sound\" Lmao(Wont work only): \a\n\n");
+	printf("\"Sound\" Lmao(Wont work only): \a\n");
 	
 	//Field width and precession:
 	printf("%.2f\n", 56.8934);
@@ -38,28 +40,24 @@ void main(){
 	printf("%d\n",'A');
 	printf("%x\n", 256);
 	printf("%o\n", 14);
-	printf("\n");
 	
 	//scanf("%s", string);
 	//printf("%d", &x);
 	//printf("%s %c\n", string, string[1]);
-	//printf("\n");
-	
-	
-	// scanf string argument must be seperated by space only.
-	//int test_1, test_2;
-	//printf("Enter Values: ");
-	//scanf("%d,%d", &test_1, &test_2);
-	//printf("\n%d %d\n");
-	
-	printf("\n");
-	printf("%d %d\n", INT_MIN, INT_MAX);
-	printf("%d %d\n", FLT_MIN, FLT_MAX);
-	printf("%d %d\n", CHAR_MIN, CHAR_MAX);
-	printf("%d\n", sizeof(3));
-	printf("%d\n", sizeof(3.3f));
-	printf("%d\n", sizeof(3.23));
-	printf("%d\n", sizeof(3.234L));
-	printf("%d\n", sizeof('A'));
+		
+	// scanf string argument must be seperated by string
+	// int test_1, test_2;
+	// printf("Enter Values: ");
+	// scanf("%d,%d", &test_1, &test_2);
+	// printf("\n%d %d\n");
+
+	//Taking an entire string as input
+	char name[100];
+	printf("Enter your Full Name: \n");
+	fgets(name, 100, stdin);// length 100: 99 + 1(EOL character)
+	printf("Your Name is: %s\n", name);
+
+	//To Show input Buffer:
+	printf("Input Buffer: %s", stdin);
 	getchar();
 }
