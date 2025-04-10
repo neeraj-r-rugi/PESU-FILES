@@ -60,4 +60,16 @@ void main(){
 	//To Show input Buffer:
 	printf("Input Buffer: %s", stdin);
 	getchar();
+
+	int a, b;
+	char ch = 'abcd';
+    scanf("%d,%d", &a, &b);//Input try: 70,70
+    printf("%d %d, %c\n", a, b, ch);//prints: d
+
+	unsigned int ac = 10; 
+	unsigned int b = -10;   // observe this 
+	int c = -10;  // change this to -10 and check 
+	signed int d = -10; 
+	printf("%u %u,%d %d %d\n",ac,b,b,c,d); 
+	printf("%d %d %d %d",ac,b,c,d);
 }

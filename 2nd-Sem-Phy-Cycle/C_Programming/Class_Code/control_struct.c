@@ -34,9 +34,9 @@ int main(){
 		else printf("Neither a multiple of 3 nor 5.\n");
 		printf("##################################\n");
 		/*
-		Reason being that in an "if  else-if else" ladder, one and only one of the statements is executed, they exist as a single entity
+		Reason being that in an "if-else-if else" ladder, one and only one of the statements is executed, they exist as a single entity
 		either one of the condition is true and executes or else exeutes.
-		if an if else ladder each of the if statements executes and each is a single entity hence why all for x = 15, all 3 print statemnts
+		in an if else ladder each of the if statements executes and each is a single entity hence why all for x = 15, all 3 print statemnts
 		get printed. Also the else block belongs the immediate preceding if statement, but in if else if else ladder, the else
 		belongs to and is part of the entire block/entity.   
 		*/
@@ -141,7 +141,7 @@ int main(){
 		break;
 	}
 
-	// // scope of variables in if statements
+	// scope of variables in if statements
 	// if(1){
 	// 	int scope = 20;
 	// 	printf("Scope value: %d", scope);

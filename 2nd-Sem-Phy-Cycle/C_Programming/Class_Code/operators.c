@@ -67,7 +67,7 @@ int main(){
 	printf("OR operation: %d\n", result_OR);
 	printf("NOT operation: %d\n", result_NOT);
 	printf("Precednce follows NOT-> AND -> OR: %d\n", bool_1&&bool_2||!bool_3);
-	//it is: true AND false OR NOT(false) -> true AND false OR true -> true AND true -> true -> 1(C represents 1 as true and 0 as false, hence we use %d to print the values)
+	//it is: [true AND false OR NOT(false)] -> [true AND false OR true] -> [true AND true] -> [true] -> [1](C represents 1 as true and 0 as false, hence we use %d to print the values)
 	printf("-----------------------------------------------------------\n");
 
 	//Relational Operators
