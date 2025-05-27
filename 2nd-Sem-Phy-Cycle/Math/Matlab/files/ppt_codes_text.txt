@@ -1,0 +1,101 @@
+syms x y z
+J = jacobian([x^2-2*y, x+y+z, x-2*y+3*z], [x, y, z])
+det(J)
+
+syms x y r theta
+x = r*cos(theta);
+y = r*sin(theta);
+J = jacobian([x^2-2*y^2, 2*x^2-y^2], [r, theta])
+d = det(J)
+simplify(d)
+
+syms x y u v
+x = u*(1-v)
+y = u*v
+J = jacobian([x, y], [u,v])
+M = J * inv(J)
+det(M)
+
+syms x y
+fun = @(x,y) 1./(sqrt(x+y).*(1+x+y).^2);
+ymax = @(x) 1- x;
+integral2(fun, 0, 1, 0, ymax)%prforms matrix like operation with function hence '.' needed
+
+syms y x
+fun = @(x, y) y.*sin(x) + x.*cos(y);
+integral2(fun, -pi, 2*pi, 0, pi)
+
+syms x y
+fun = @(x, y) x.*(x.^2 + y.^2);
+ymax = @(x) x.^2;
+integral2(fun, 0, 5, 0, ymax)
+
+syms r theta
+fun = @(r, theta) r./(sqrt(r.*cos(theta)+r.*sin(theta)).*(1+r.*cos(theta)+r.*sin(theta).^2));
+tmax = @(theta) 1./(sin(theta)+cos(theta));
+integral2(fun, 0, pi/2, 0, tmax)
+
+syms x y z
+fun = @(x, y, z) x + y + z;
+integral3(fun, 0, 2, 0, 2, 0, 2)
+
+syms x k n pi
+evalin(symengine, 'assume(k, Type::Integer)');%declare K as integer
+a  = @(f, x, k, pi) int(f * cos(k*x)/pi, x, -pi, pi);%intrgral function wrt to x, b/w given limits for 'a'
+b = @(f, x, k, pi) int(f*sin(k*x)/pi, x, -pi, pi);%intrgral function wrt to x, b/w given limits 'b'
+f = x - x^2;
+simplify(a(f, x, k, pi))
+simplify(b(f, x, k, pi))
+fs =@(f, x, n, pi) a(f, x, 0, pi)/2 + symsum(a(f, x, k, pi) * cos(k * x) + b(f, x, k, pi) * sin(k * x), k, pi, n);
+%create a fourier series function
+pretty(fs(f, x, 3, pi))
+
+syms x k n l
+evalin(symengine, 'assume(k, Type::Integer)');
+a = @(f, x, k, l) int(f * cos(k * pi * x/l)/l, x, -l, l);
+b = @(f, x, k, l) int(f * sin(k * pi * x/l)/l, x, -l, l);
+
+f = abs(x);
+a(f, x, k, 1)
+b(f, x, k, 1)
+%f -> the function whose series is to be found
+%x -> the independent variable of function x
+%k -> the nth term of a or b
+%l -> the limits of integration
+
+fs = @(f, x, n, l) a(f, x, 0, l)/2 + symsum(a(f, x, k, l) * cos(k * pi * x/l) + b(f, x, k, l) * sin(k * pi * x/l), k, 1, n);
+fs(f, x, 2, 1)
+
+%plotting the graph
+ezplot(fs(f, x, 1, 1), -1, 1)
+hold on
+ezplot(f, -1, 1)
+hold off
+title("Modulous Function Approximation")
+
+clf; clear all
+syms t
+f = -4:0.1:4;
+F = int(1 * exp(-i*pi*f*t), t, -0.5, 0.5);
+F1 = double(F);
+subplot(211)
+plot(f, abs(F1))
+subplot(212)
+plot(f, angle(F1))
+grid on
+
+syms t x
+func = exp(-1*(t^2 + x^2))
+fourier(func)
+
+syms t
+func = t * exp(-t^2)
+fourier(func)
+
+syms omega
+ifunc = exp(-(omega^2/4));
+ifourier(ifunc)
+
+syms w a
+ifunc = exp(-(w^2 - a^2));
+ifourier(ifunc)
