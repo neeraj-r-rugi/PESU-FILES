@@ -24,7 +24,7 @@ int main() {
             printf("* ");
         c--;
         spaces++;
-        printf("\n")
+        printf("\n");
     }
     return 0;
 }

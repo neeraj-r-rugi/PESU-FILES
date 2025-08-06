@@ -20,10 +20,11 @@ void selectionSort(int arr[], int n) {
     int min_indx = 0;
     for(int i = 0; i < n-1; i++){
         min_indx = i;
-        for(int j = i;j < n; j++)
+        for(int j = i;j < n; j++){
             if(arr[min_indx]>arr[j]){
                 min_indx = j;
             }
+		}
         int temp = 0;
         temp = arr[i];
         arr[i] = arr[min_indx];
