@@ -222,11 +222,11 @@ int main(void){
     insert_at_pos(&first, 20, 4);
     printf("After Adding:\n");
     display_list(&first);
-    find_in_list(&first, 69);
-    // printf("\n---------------------------------------------------------------------------\n\n");
-    // printf("After Deleting:\n");
-    // delete_from_pos(&first, 5);
-    // display_list(&first);
+    find_in_list(&first, 20);
+    printf("\n---------------------------------------------------------------------------\n\n");
+    printf("After Deleting:\n");
+    delete_from_pos(&first, 5);
+    display_list(&first);
     return 0;
 }
 
