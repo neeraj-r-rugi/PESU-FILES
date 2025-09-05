@@ -1,0 +1,49 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5eaead2f0200 .scope module, "notgate" "notgate" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "c";
+    .port_info 1 /INPUT 1 "a";
+o0x79f03f3a0018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5eaead2f0520_0 .net "a", 0 0, o0x79f03f3a0018;  0 drivers
+v0x5eaead3012f0_0 .net "c", 0 0, L_0x5eaead301590;  1 drivers
+L_0x5eaead301590 .reduce/nor o0x79f03f3a0018;
+S_0x5eaead2f0390 .scope module, "notgate_tb" "notgate_tb" 3 1;
+ .timescale 0 0;
+L_0x5eaead301660 .functor NOT 1, v0x5eaead301410_0, C4<0>, C4<0>, C4<0>;
+v0x5eaead301410_0 .var "a", 0 0;
+v0x5eaead3014d0_0 .net "c", 0 0, L_0x5eaead301660;  1 drivers
+    .scope S_0x5eaead2f0390;
+T_0 ;
+    %delay 0, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5eaead301410_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5eaead301410_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x5eaead2f0390;
+T_1 ;
+    %vpi_call 3 11 "$monitor", $time, "a = %b,c = %b", v0x5eaead301410_0, v0x5eaead3014d0_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x5eaead2f0390;
+T_2 ;
+    %vpi_call 3 14 "$dumpfile", "notgate.vcd" {0 0 0};
+    %vpi_call 3 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5eaead2f0390 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "notgate.v";
+    "notgate_tb.v";

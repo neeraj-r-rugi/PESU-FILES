@@ -1,0 +1,92 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5bbecb7604b0 .scope module, "tb" "tb" 2 1;
+ .timescale 0 0;
+v0x5bbecb7876a0_0 .var "in", 0 0;
+v0x5bbecb787760_0 .var "sel", 0 0;
+v0x5bbecb787820_0 .net "y0", 0 0, L_0x5bbecb787bc0;  1 drivers
+v0x5bbecb787910_0 .net "y1", 0 0, L_0x5bbecb787a00;  1 drivers
+S_0x5bbecb76fe20 .scope module, "uut" "demux" 2 4, 3 13 0, S_0x5bbecb7604b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "sel";
+    .port_info 1 /INPUT 1 "in";
+    .port_info 2 /OUTPUT 1 "y0";
+    .port_info 3 /OUTPUT 1 "y1";
+v0x5bbecb787220_0 .net "in", 0 0, v0x5bbecb7876a0_0;  1 drivers
+v0x5bbecb787310_0 .net "n1", 0 0, L_0x5bbecb787b00;  1 drivers
+v0x5bbecb787420_0 .net "sel", 0 0, v0x5bbecb787760_0;  1 drivers
+v0x5bbecb787510_0 .net "y0", 0 0, L_0x5bbecb787bc0;  alias, 1 drivers
+v0x5bbecb7875b0_0 .net "y1", 0 0, L_0x5bbecb787a00;  alias, 1 drivers
+S_0x5bbecb770070 .scope module, "a" "andgate" 3 15, 3 1 0, S_0x5bbecb76fe20;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0x5bbecb787a00 .functor AND 1, v0x5bbecb787760_0, v0x5bbecb7876a0_0, C4<1>, C4<1>;
+v0x5bbecb76f200_0 .net "a", 0 0, v0x5bbecb787760_0;  alias, 1 drivers
+v0x5bbecb7867c0_0 .net "b", 0 0, v0x5bbecb7876a0_0;  alias, 1 drivers
+v0x5bbecb786880_0 .net "y", 0 0, L_0x5bbecb787a00;  alias, 1 drivers
+S_0x5bbecb7869a0 .scope module, "b" "andgate" 3 17, 3 1 0, S_0x5bbecb76fe20;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0x5bbecb787bc0 .functor AND 1, L_0x5bbecb787b00, v0x5bbecb7876a0_0, C4<1>, C4<1>;
+v0x5bbecb786bd0_0 .net "a", 0 0, L_0x5bbecb787b00;  alias, 1 drivers
+v0x5bbecb786cb0_0 .net "b", 0 0, v0x5bbecb7876a0_0;  alias, 1 drivers
+v0x5bbecb786d70_0 .net "y", 0 0, L_0x5bbecb787bc0;  alias, 1 drivers
+S_0x5bbecb786e50 .scope module, "n" "notgate" 3 16, 3 7 0, S_0x5bbecb76fe20;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+v0x5bbecb787060_0 .net "a", 0 0, v0x5bbecb787760_0;  alias, 1 drivers
+v0x5bbecb787130_0 .net "y", 0 0, L_0x5bbecb787b00;  alias, 1 drivers
+L_0x5bbecb787b00 .reduce/nor v0x5bbecb787760_0;
+    .scope S_0x5bbecb7604b0;
+T_0 ;
+    %delay 0, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5bbecb787760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5bbecb7876a0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5bbecb787760_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5bbecb7876a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5bbecb787760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5bbecb7876a0_0, 0, 1;
+    %delay 15, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5bbecb787760_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5bbecb7876a0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x5bbecb7604b0;
+T_1 ;
+    %vpi_call 2 14 "$monitor", $time, "sel=%b, in=%b, y0=%b, y1=%b", v0x5bbecb787760_0, v0x5bbecb7876a0_0, v0x5bbecb787820_0, v0x5bbecb787910_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x5bbecb7604b0;
+T_2 ;
+    %vpi_call 2 18 "$dumpfile", "1-2demux.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5bbecb7604b0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "1-2demux_tb.v";
+    "1-2demux.v";

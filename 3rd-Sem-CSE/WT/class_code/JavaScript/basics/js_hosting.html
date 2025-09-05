@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //hoisting
+      hello();
+      function hello(){
+        console.log("Hello");
+      }
+      a = 10;
+      b = 5
+      c = 7
+      function hoist(){
+        if(true){
+          a = 20;
+          const b = 10
+          let c = 9;
+          console.log("if: ", a, b, c);
+        }
+        console.log("in func: ", a, b, c);
+      }
+      console.log("outside before call: ", a, b, c);
+      console.log("called");
+      hoist();
+      console.log("outside after call: ", a, b, c);
+      console.log("-------------------------------------------------");
+      hoist();
+    </script>
+    <style>
+      html {
+        background-color: cadetblue;
+      }
+      html:hover{
+        background-color: cornflowerblue;
+      }
+      h1{
+        text-align: center;
+        margin-top: 50vh;
+        text-shadow: 10px 5px 10px;
+      }
+      span {
+        border: 5px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: aquamarine;
+      }
+      span:hover{
+        background-color: blanchedalmond;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><span>HTML Hoisting</span></h1>
+  </body>
+</html>

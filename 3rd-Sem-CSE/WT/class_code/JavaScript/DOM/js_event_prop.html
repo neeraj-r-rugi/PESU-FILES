@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1, #div2{
+            background-color: yellow;
+            border: 1px solid black;
+            width: 80%;
+        }
+        #p1,#p2{
+            background-color: aquamarine;
+            border: 5px solid black;
+            padding: 50px;
+            width: 50%;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" style="color: brown;"> Bubbling
+        <p id="p1">Paragraph - Inner</p>
+    </div>
+    <div id="div2">
+        <p id="p2">Paragraph - Inner</p>
+    </div>
+    <script>
+        const d1 = document.getElementById("div1");
+        d1.onclick = function fun1(){
+            alert("div1-Bubbling")
+        }
+        const d2 = document.getElementById("div2");
+        d2.onclick = function fun2(){
+            alert("div2-bubbling")
+        }
+        const p1 = document.getElementById("p1").addEventListener("click", fun);
+        p1.onclick = function fun3(){
+            alert("para-bubbling")
+        }
+    </script>
+</body>
+</html>

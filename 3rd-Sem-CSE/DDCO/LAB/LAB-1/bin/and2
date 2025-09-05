@@ -1,0 +1,67 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x6213d0aa9240 .scope module, "andgate" "andgate" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "c";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+o0x7111a16e6018 .functor BUFZ 1, C4<z>; HiZ drive
+o0x7111a16e6048 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x6213d0abc450 .functor AND 1, o0x7111a16e6018, o0x7111a16e6048, C4<1>, C4<1>;
+v0x6213d0aa95b0_0 .net "a", 0 0, o0x7111a16e6018;  0 drivers
+v0x6213d0abc020_0 .net "b", 0 0, o0x7111a16e6048;  0 drivers
+v0x6213d0abc0e0_0 .net "c", 0 0, L_0x6213d0abc450;  1 drivers
+S_0x6213d0aa9420 .scope module, "andgate_tb" "andgate_tb" 3 1;
+ .timescale 0 0;
+L_0x6213d0abc570 .functor AND 1, v0x6213d0abc200_0, v0x6213d0abc2c0_0, C4<1>, C4<1>;
+v0x6213d0abc200_0 .var "a", 0 0;
+v0x6213d0abc2c0_0 .var "b", 0 0;
+v0x6213d0abc380_0 .net "c", 0 0, L_0x6213d0abc570;  1 drivers
+    .scope S_0x6213d0aa9420;
+T_0 ;
+    %delay 0, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6213d0abc200_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6213d0abc2c0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6213d0abc200_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6213d0abc2c0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6213d0abc200_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6213d0abc2c0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6213d0abc200_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6213d0abc2c0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x6213d0aa9420;
+T_1 ;
+    %vpi_call 3 13 "$monitor", $time, "a = %b, b = %b, c = %b", v0x6213d0abc200_0, v0x6213d0abc2c0_0, v0x6213d0abc380_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x6213d0aa9420;
+T_2 ;
+    %vpi_call 3 16 "$dumpfile", "andgate.vcd" {0 0 0};
+    %vpi_call 3 17 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x6213d0aa9420 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "and2.v";
+    "and2_tb.v";

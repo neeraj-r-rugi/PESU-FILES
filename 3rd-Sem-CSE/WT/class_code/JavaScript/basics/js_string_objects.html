@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        var str1 = "abcdefghi";
+        console.log(str1);
+        console.log(str1.length);
+        s1 = str1.slice(3, 7);
+        console.log(s1);
+        s2 = str1.substring(3, 6);
+        console.log(s2);
+        s3 = str1.substr(2, 5);
+        console.log(s3)
+        console.log(str1.slice(7));
+        console.log(str1.slice(-7));
+        s4 = str1.replace("abc", "xyz");
+        console.log(s4);
+        s5 = str1.toUpperCase()
+        console.log(s5)
+        s5 = str1.toLowerCase()
+        console.log(s5)
+        str2 = "123456789"
+        str3 = str1.concat(str2);
+        console.log(str3);
+        s7 = str3.charAt(4)
+        console.log(s7)
+        //Math
+        console.log("<!---------------MATH------------->")
+        var m1 = 6.78;
+        console.log( m2 = Math.floor(m1));
+        var rnd = 1 + Math.floor(Math.random() * 100);
+        console.log(rnd);
+
+        a = 0; b = 1;
+        rnd = a + Math.floor(Math.random() * b - a);
+        console.log(rnd);
+
+
+    </script>
+    <style>
+      html {
+        background-color: paleturquoise;
+      }
+      html:hover{
+        background-color: hotpink;
+      }
+      h1{
+        text-align: center;
+        margin-top: 50vh;
+        text-shadow: 10px 5px 10px;
+      }
+      span {
+        border: 5px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: aquamarine;
+      }
+      span:hover{
+        background-color: blanchedalmond;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><span>HTML String & Math Objects</span></h1>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p>Paragraph - I</p>
+        <p>Paragraph - II</p>
+        <p id="p3">Paragraph - III</p>
+        <p id="p4">Paragraph - IV</p>
+        <p>Paragraph - V</p>
+        <script>
+            const para = document.createElement("p");
+            const node = document.createTextNode("New Paragraph");
+            para.appendChild(node);
+            const el = document.getElementById("p3");
+            el.insertBefore(para, el.firstChild);
+
+            const para4 = document.getElementById("p4");
+            const para1 = document.createElement("p");
+            const node2 = document.createTextNode("New LMAO");
+            para1.appendChild(node2);
+            para4.appendChild(para1);
+
+            document.removeChild('body')
+        </script>
+    </body>
+</html>

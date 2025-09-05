@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bannana Problem - I</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: aliceblue;
+      }
+
+      .header {
+        background-color: #ff8c42;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .event-info {
+        background-color: white;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .subheader {
+        background-color: green;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .form-container {
+        padding: 30px;
+        background-color: white;
+        margin: 20px;
+        border: 0px solid white;
+        border-radius: 10px;
+      }
+
+      .main-form-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 10px;
+      }
+
+      .main-form-table td {
+        padding: 5px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      input,select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      .size-table {
+        width: 100%;
+        margin: 20px 0;
+        background-color: #f9f9f9;
+        border-collapse: collapse;
+      }
+
+      .size-table th,
+      .size-table td {
+        padding: 8px;
+        border: 1px solid #ddd;
+      }
+
+      .size-table th {
+        background-color: aliceblue;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      .checkbox-table {
+        width: 100%;
+        margin: 20px 0;
+      }
+
+      .checkbox-table td {
+        padding: 10px;
+        vertical-align: top;
+      }
+      .checkbox-table label {
+        font-weight: normal;
+        font-size: 18px;
+      }
+
+      .button-table {
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      .button-table td {
+        padding: 0 7.5px;
+        width: 50%;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .reset {
+        background-color: white;
+        border: 1px solid red;
+        border-radius: 10px;
+        color: red;
+      }
+
+      .submit {
+        background-color: white;
+        border: 1px solid blue;
+        border-radius: 10px;
+        color: blue;
+      }
+
+      .tshirt-section {
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Samarpana Run</div>
+    <hr style="background-color: grey;height: 8px;"/>
+
+    <div class="event-info">
+      For the Indian Army!<br />
+      8/9/2025, 11:08:01 PM
+    </div>
+
+    <div class="subheader">Registration Form</div>
+
+    <div class="form-container">
+      <form id="registrationForm">
+        <table class="main-form-table">
+          <tr>
+            <td>
+              <label for="fullName">Full Name *</label>
+              <input
+                type="text"
+                id="fullName"
+                placeholder="e.g., Neeraj R Rugi"
+                required
+              />
+            </td>
+            <td>
+              <label for="email">Email *</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="e.g., neeraj.rugi@pesu.edu.com"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="mobile">Mobile Number *</label>
+              <input
+                type="tel"
+                id="mobile"
+                placeholder="e.g., 9876543210"
+                required
+              />
+            </td>
+            <td>
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="university">University/Organization *</label>
+              <input
+                type="text"
+                id="university"
+                placeholder="e.g., PES University"
+                required
+              />
+            </td>
+            <td>
+              <label for="usn">USN (College ID) *</label>
+              <input
+                type="text"
+                id="usn"
+                placeholder="e.g., PES2UG24CS311"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="city">City</label>
+              <input type="text" id="city" placeholder="e.g., Bengaluru" />
+            </td>
+            <td>
+              <label for="state">State</label>
+              <input type="text" id="state" placeholder="e.g., Karnataka" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="pincode">Pincode</label>
+              <input type="text" id="pincode" placeholder="e.g., 560085" />
+            </td>
+            <td></td>
+          </tr>
+        </table>
+
+        <div class="tshirt-section">
+          <label for="tshirtSize">T-shirt Size *</label>
+          <select id="tshirtSize" style="background-color: white;" required>
+            <option value="">Select size</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            <option value="3XL">3XL</option>
+          </select>
+        </div>
+
+        <table class="size-table">
+          <tr>
+            <th>Size</th>
+            <th>Chest (in)</th>
+            <th>Chest (cm)</th>
+            <th>Length (cm)</th>
+          </tr>
+          <tr>
+            <td>XS</td>
+            <td>34"</td>
+            <td>86cm</td>
+            <td>65cm</td>
+          </tr>
+          <tr>
+            <td>S</td>
+            <td>36"</td>
+            <td>91cm</td>
+            <td>67cm</td>
+          </tr>
+          <tr>
+            <td>M</td>
+            <td>38"</td>
+            <td>97cm</td>
+            <td>70cm</td>
+          </tr>
+          <tr>
+            <td>L</td>
+            <td>40"</td>
+            <td>102cm</td>
+            <td>72cm</td>
+          </tr>
+          <tr>
+            <td>XL</td>
+            <td>42"</td>
+            <td>107cm</td>
+            <td>75cm</td>
+          </tr>
+          <tr>
+            <td>XXL</td>
+            <td>44"</td>
+            <td>112cm</td>
+            <td>77cm</td>
+          </tr>
+          <tr>
+            <td>3XL</td>
+            <td>46"</td>
+            <td>117cm</td>
+            <td>79cm</td>
+          </tr>
+        </table>
+
+        <table class="checkbox-table">
+          <tr>
+            <td width="20">
+              <input type="checkbox" id="terms" required />
+            </td>
+            <td>
+              <label for="terms"
+                >I confirm the information is accurate and agree to the event
+                terms and waiver.</label
+              >
+            </td>
+          </tr>
+        </table>
+
+        <table class="button-table">
+          <tr>
+            <td>
+              <button type="button" class="reset" onclick="resetForm()">
+                Reset Form
+              </button>
+            </td>
+            <td>
+              <button type="submit" class="submit">Submit Form</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <script>
+      let date_time = new Date().toLocaleString("en-US");
+      let date_div = document.getElementsByClassName("event-info");
+      date_div[0].innerHTML = `<h3>For the Indian Army!</h3><br />${date_time}`;
+
+
+      function resetForm() {
+        document.getElementById("registrationForm").reset();
+      }
+
+      document.getElementById("registrationForm").addEventListener("submit", function (e) {
+          e.preventDefault();
+          const requiredFields = this.querySelectorAll("[required]");
+          let allValid = true;
+          requiredFields.forEach((field) => {
+            if (!field.value.trim()) {
+              allValid = false;
+              field.style.borderColor = "red";
+            } else {
+              field.style.borderColor = "#ddd";
+            }
+          });
+
+          if (allValid) {
+            alert(
+              "Registration submitted successfully! Thank you for registering for the Samarpana Run."
+            );
+          } else {
+            alert("Please fill in all required fields marked with *");
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(a, b){
+            return a + b;
+        }
+        console.log(add(5, 5));
+        let x = add(5, 8);
+        console.log("X: ", x);
+        //anonymous function
+        var ref = add;
+        ref = function(a, b)
+        {
+            return a + b;
+        }
+        console.log("Annonymous: " + ref(2, 4));
+
+        //No Args
+        ref = function(...args){
+            var s = 0;
+            for(var i in args){
+                s = s + args[i];
+            }
+            return s;
+        }
+        console.log("Variable argument function: ", ref(1, 2, 3, 4));
+
+        //arrow function
+        let arr_func = (a, b) => a * b;
+        console.log("arrow function: ", arr_func(3, 4))
+
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>

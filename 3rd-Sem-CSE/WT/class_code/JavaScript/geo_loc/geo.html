@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Get Your Location</h2>
+    <button onclick="getLocation()">Show My Location</button>
+    <p id="location"></p>
+    <p id="time"></p>
+    <script>
+      let time = new Date();
+      time = time.toString("en-US");
+      let p = document.getElementById("time");
+      function getLocation() {
+        if (navigator.geolocation) {
+            time = new Date();
+        time = time.toString("en-US");
+        p.innerHTML = `${time}`;
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            
+          document.getElementById("location").innerHTML =
+            "Geolocation is not supported by this browser.";
+        }
+      }
+      function showPosition(position) {
+        
+        document.getElementById("location").innerHTML =
+          "Latitude: " +
+          position.coords.latitude +
+          "<br>Longitude: " +
+          position.coords.longitude;
+
+      }
+      function showError(error) {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            document.getElementById("location").innerHTML =
+              "User denied the request for Geolocation.";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            document.getElementById("location").innerHTML =
+              "Location information is unavailable.";
+            break;
+          case error.TIMEOUT:
+            document.getElementById("location").innerHTML =
+              "The request to get user location timed out.";
+            break;
+          case error.UNKNOWN_ERROR:
+            document.getElementById("location").innerHTML =
+              "An unknown error occurred.";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

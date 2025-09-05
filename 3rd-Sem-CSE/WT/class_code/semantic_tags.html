@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("../../../../web_technologies/media/death_stranding_banner.png");
+            background-repeat: repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+
+        }
+        header{
+            padding: 24pt;
+            text-align: center;
+            background-color: aqua;
+            border: 6pt solid black;
+            border-radius: 12pt;
+        }
+        li{
+            list-style: armenian;
+            list-style-position: inside;
+        }
+        #s1{
+            margin-top: 12pt;
+            background-color: bisque;
+            padding: 12pt;
+            border: 6pt solid black;
+            border-radius: 24pt;
+            width: 50.5%;
+            text-shadow: 2px 8px 5px;
+        }
+        article{
+            margin-top: 12pt;
+            border: 4pt solid black;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: beige;
+            color: crimson;
+        }
+        article:hover{
+            background-color: blanchedalmond;
+        }
+        aside{
+            background-color: aliceblue;
+            margin-top: 10px;
+            border: 5px solid violet;
+            border-radius: 50pt;
+            padding: 10px;
+            text-align: right;
+            text-transform: capitalize;
+            text-decoration:  overline;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Semantic HTML5 Tags Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="#main">Main</a></li>
+                <li><a href="#article">Article</a></li>
+                <li><a href="#aside">Aside</a></li>
+                <li><a href="#footer">Footer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <section id="s1">
+            <h2>Section Tag</h2>
+            <p>Oh, the waves roll high and the wind blows free,<br>
+            Singin' aye, aye, blow the man down!<br>
+            Raise the anchor, set the sail, to the open sea,<br>
+            We'll roam the ocean 'til the sun goes down!</p>
+        </section>
+        <article id="article">
+            <h2>Article Tag</h2>
+            <p>This is an article. Lorem ipsum dolor sit amet.</p>
+            <figure>
+                <img src="./" alt="Placeholder Image">
+                <br />
+                <figcaption>Figcaption: Example image.</figcaption>
+            </figure>
+            <mark>This text is highlighted using &lt;mark&gt;.</mark>
+            <time datetime="2025-08-07">August 7, 2025</time>
+        </article>
+        <aside id="aside">
+            <h2>Aside Tag</h2>
+            <p>This is some related information in an aside.</p>
+        </aside>
+        <details>
+            <summary>Details Tag</summary>
+            <p>Mano Buddhi Ahankara Chittani Naaham<br>
+            Na Cha Shrotra Jihve Na Cha Ghraana Netre<br>
+            Na Cha Vyoma Bhoomir Na Tejo Na Vaayuh<br>
+            Chidananda Rupah Shivoham Shivoham</p>
+            <p>Na Cha Prana Samjno Na Vai Pancha Vayuh<br>
+            Na Va Saptadhatur Na Va Pancha Koshah<br>
+            Na Vak Pani Padam Na Chopastha Payu<br>
+            Chidananda Rupah Shivoham Shivoham</p>
+            <p>Na Me Dvesha Ragau Na Me Lobha Mohau<br>
+            Mado Naiva Me Naiva Matsarya Bhavah<br>
+            Na Dharmo Na Chartho Na Kamo Na Mokshah<br>
+            Chidananda Rupah Shivoham Shivoham</p>
+            <p>Na Punyam Na Papam Na Saukhyam Na Dukham<br>
+            Na Mantro Na Tirtham Na Veda Na Yajnah<br>
+            Aham Bhojanam Naiva Bhojyam Na Bhokta<br>
+            Chidananda Rupah Shivoham Shivoham</p>
+            <p>Na Me Mrityu Shanka Na Me Jati Bhedah<br>
+            Pita Naiva Me Naiva Mata Na Janma<br>
+            Na Bandhur Na Mitram Gurur Naiva Shishyah<br>
+            Chidananda Rupah Shivoham Shivoham</p>
+            <p>Aham Nirvikalpo Nirakara Rupo<br>
+            Vibhutva Cha Sarvatra Sarvendriyanam<br>
+            Na Cha Sangatam Naiva Muktir Na Bandhah<br>
+            Chidananda Rupah Shivoham Shivoham</p>
+        </details>
+        <dialog open>
+            <p>This is a dialog box.</p>
+        </dialog>
+    </main>
+    <footer id="footer">
+        <address>
+            Contact: <a href="mailto:someone@example.com">someone@example.com</a>
+        </address>
+        <small>&copy; 2025 Semantic HTML Demo</small>
+
+    </footer>
+</body>
+</html>

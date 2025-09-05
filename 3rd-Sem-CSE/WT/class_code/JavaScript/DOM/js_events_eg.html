@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #f8ffae 0%, #43c6ac 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #text1 {
+            padding: 12px 20px;
+            border: 2px solid #43c6ac;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(67,198,172,0.15);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+        }
+        #text1:focus {
+            border-color: #ff8c00;
+            box-shadow: 0 4px 16px rgba(255,140,0,0.15);
+        }
+        p {
+            margin-top: 32px;
+            padding: 18px 36px;
+            background: linear-gradient(90deg, #ff8c00 0%, #ff0080 100%);
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+            user-select: none;
+        }
+        p:hover {
+            transform: scale(1.07) rotate(-2deg);
+            box-shadow: 0 8px 24px rgba(255, 0, 128, 0.18);
+            background: linear-gradient(90deg, #ff0080 0%, #ff8c00 100%);
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="text1" onkeypress="keyfun()" placeholder="Type something..." />
+    <p onmouseover="fun2()">Touch ME</p>
+    <script>
+        function keyfun(){
+            alert("Key Events");
+        }
+        function fun2(){
+            alert("Touched");
+        }
+    </script>
+</body>
+</html>

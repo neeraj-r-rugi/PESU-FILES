@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--HTML is not cases sensitive lmao-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta lang="en" />
+    <title>Basics of HTML</title>
+	<link href="./basics_of_html.css" rel="stylesheet" />
+	<style>
+		h2{
+			color: rebeccapurple;
+		}
+	</style>
+  </head>
+  <body>
+    <h1>This is h1</h1>
+    <h2>This is h2</h2>
+    <h3>This is h3</h3>
+    <h4>This is h4</h4>
+    <h5>This is h5</h5>
+    <h6>This is h6</h6>
+	<hr />
+    <p style="color: black;">
+      This is a Paragraph: <br />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+	<hr />
+	<ol>
+		<li>1</li>
+		<li>2</li>
+	</ol>
+	<hr />
+	<ul>
+		<li>Number</li>
+		<li>Strins</li>
+	</ul>
+	<hr />
+	<dl>
+		<dt>Web Technologies</dt>
+		<dd>HTML, CSS, JavaScript, MERN</dd>
+	</dl>
+	<hr />
+	<h2>Subjects we studied</h2>
+	<ol>
+		<li>Semester-I
+			<ul>
+				<li>Chemisty</li>
+				<li>EPD</li>
+				<li>Math-I</li>
+			</ul>
+		</li>
+		<li>Semester-II
+			<ul>
+				<li>Physics</li>
+				<li>EEE</li>
+				<li>Math-II</li>
+				<li>Mech</li>
+			</ul>
+		</li>
+		<li>Semester-III 
+			<dl>
+				<dt>Web Tech</dt>
+				<dd>HTML CSS JavaScript</dd>
+				<dt>DSA</dt>
+				<dd>Stack and Heap it seems</dd>
+				<dt>DDCO</dt>
+				<dd>Digital Electric bogaloo</dd>
+			</dl>
+		</li>
+	</ol>
+	<hr />
+	<a href="https://www.youtube.com"><img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-youtube-logo-icon-png-image_3560543.jpg" width="200px" height="200px"/></a>
+	<hr />
+	<h6>Horizontal Header.</h6>
+	<table border="border">
+		<caption>Academic Details</caption>
+		<tr>
+			<th>Name</th>
+			<th>SRN</th>
+			<th>CGPA</th>
+		</tr>
+		<tr>
+			<td>Nikhil MS</td>
+			<td>CS069</td>
+			<td>6.9</td>
+		</tr>
+		<tr>
+			<td>Nishit Sybau</td>
+			<td>CS420</td>
+			<td>4.20</td>
+		</tr>
+	</table>
+	<hr />
+	<h6>Vertical Column</h6>
+	<table border="border">
+		<caption>Academic Details</caption>
+		<tr>
+			<th>Name</th>
+			<th>Nikhil Sybau</th>
+			<th>Nishit MS</th>
+		</tr>
+		<tr>
+			<th>SRN</th>
+			<td>CS069</td>
+			<td>CS420</td>
+		</tr>
+		<tr>
+			<th>GPA</th>
+			<td>6.90</td>
+			<td>4.20</td>
+		</tr>
+	</table>
+	<hr />
+	<table border="border">
+		<caption>Academic Details</caption>
+		<tr>
+			<th colspan="2">Name</th>
+			<th>SRN</th>
+			<th>CGPA</th>
+		</tr>
+		<tr>
+			<td>Nikhil</td>
+			<td>MS</td>
+			<td>CS069</td>
+			<td>6.9</td>
+		</tr>
+		<tr>
+			<td>Nishit</td>
+			<td>Sybau</td>
+			<td>CS420</td>
+			<td>4.20</td>
+		</tr>
+	</table>
+	<hr />
+	<table border="border">
+		<caption>Academic Details</caption>
+		<tr>
+			<th>Name</th>
+			<th>Nikhil Sybau</th>
+			<th>Nishit MS</th>
+		</tr>
+		<tr>
+			<th>SRN</th>
+			<td>CS069</td>
+			<td>CS420</td>
+		</tr>
+		<tr>
+			<th rowspan="2">GPA</th>
+			<td>6.9</td>
+			<td>9.6</td>
+		</tr>
+		<tr>
+			<td>8.5</td>
+			<td>6.7</td>
+		</tr>
+	</table>
+	<hr />
+	<table border="border">
+		<tr>
+			<th rowspan="2">No</th>
+			<th rowspan="2">Course</th>
+			<th rowspan="2">Subject</th>
+			<th colspan="2">MARKS</th>
+			<th rowspan="2"> Total</th>
+		
+		</tr>
+		<tr>
+			<th>Internal</th>
+			<th>External</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td rowspan="2">CSE</td>
+			<td>LM</td>
+			<td>30</td>
+			<td>40</td>
+			<td>70</td>
+
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>AIML</td>
+			<td>20</td>
+			<td>40</td>
+			<td>60</td>
+		</tr>
+	</table>
+  </body>
+</html>

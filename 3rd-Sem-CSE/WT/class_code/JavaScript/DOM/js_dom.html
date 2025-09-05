@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM</title>
+        <style>
+            .pcls {
+                background-color: peru;
+                border: 5px solid magenta;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p class="pcls"></p>
+        <h6></h6>
+        <h6></h6>
+
+        <script>
+            var p1 = document.getElementById("p1");
+            p1.innerHTML =
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+            var p3 = document.getElementsByClassName("pcls");
+            p3[0].innerHTML = "<h3>P3</h3>";
+            var h6 = document.getElementsByTagName("h6");
+            h6[0].innerHTML = "H6 - I";
+            h6[1].innerHTML = "H6 - II";
+            h6[0].style.color = "red";
+            p3[0].style.padding = "10px";
+            var list = document.querySelectorAll("p.pcls");
+            for (var i = 0; i < list.length; i++) {
+                list[i].innerText = list[i].style.color = "blue";
+            }
+        </script>
+    </body>
+</html>

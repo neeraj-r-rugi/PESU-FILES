@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="button"],
+        button {
+            background: linear-gradient(90deg, #ff8c00 0%, #ff0080 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+            margin: 8px 0;
+            outline: none;
+        }
+        input[type="button"]:hover,
+        button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 24px rgba(255, 0, 128, 0.2);
+            background: linear-gradient(90deg, #ff0080 0%, #ff8c00 100%);
+        }
+        input[type="button"]:active,
+        button:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+    </style>
+</head>
+<body>
+    <input type="button" name="btn1" value="CLICK-Inline" onclick="hello()" />
+    <br />
+    <button id="b1">CLICK ME</button>
+    <br />
+    <button class="b2">CLICK-addEventListner</button>
+    <script>
+        function hello(){
+            alert("Button Clicked");
+        }
+        const btn1 = document.getElementById('b1');
+        btn1.ondblclick = function funhello(){
+            alert("Double Trouble")
+        }
+        const btn2 = document.getElementsByClassName("b2");
+        btn2[0].addEventListener("click", hello3)
+        function hello3(){
+            alert("Hello From The Other side");
+        }
+    </script>
+</body>
+</html>

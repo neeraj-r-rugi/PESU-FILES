@@ -1,0 +1,69 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55abc7f92280 .scope module, "norgate" "norgate" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "c";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+o0x78eb48ae6048 .functor BUFZ 1, C4<z>; HiZ drive
+o0x78eb48ae6078 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x55abc7fa58f0 .functor OR 1, o0x78eb48ae6048, o0x78eb48ae6078, C4<0>, C4<0>;
+L_0x55abc7fa5a10 .functor NOT 1, L_0x55abc7fa58f0, C4<0>, C4<0>, C4<0>;
+v0x55abc7f925f0_0 .net *"_ivl_0", 0 0, L_0x55abc7fa58f0;  1 drivers
+v0x55abc7fa5400_0 .net "a", 0 0, o0x78eb48ae6048;  0 drivers
+v0x55abc7fa54c0_0 .net "b", 0 0, o0x78eb48ae6078;  0 drivers
+v0x55abc7fa5560_0 .net "c", 0 0, L_0x55abc7fa5a10;  1 drivers
+S_0x55abc7f92460 .scope module, "norgate_tb" "norgate_tb" 3 1;
+ .timescale 0 0;
+L_0x55abc7fa5b00 .functor NOR 1, v0x55abc7fa56a0_0, v0x55abc7fa5760_0, C4<0>, C4<0>;
+v0x55abc7fa56a0_0 .var "a", 0 0;
+v0x55abc7fa5760_0 .var "b", 0 0;
+v0x55abc7fa5820_0 .net "c", 0 0, L_0x55abc7fa5b00;  1 drivers
+    .scope S_0x55abc7f92460;
+T_0 ;
+    %delay 0, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55abc7fa56a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55abc7fa5760_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55abc7fa56a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55abc7fa5760_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55abc7fa56a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55abc7fa5760_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55abc7fa56a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55abc7fa5760_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x55abc7f92460;
+T_1 ;
+    %vpi_call 3 13 "$monitor", $time, "a = %b, b = %b, c = %b", v0x55abc7fa56a0_0, v0x55abc7fa5760_0, v0x55abc7fa5820_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x55abc7f92460;
+T_2 ;
+    %vpi_call 3 16 "$dumpfile", "norgate.vcd" {0 0 0};
+    %vpi_call 3 17 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55abc7f92460 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "norgate.v";
+    "norgate_tb.v";

@@ -1,0 +1,28 @@
+html{
+    font-size: 12pt;
+    background-color: antiquewhite;
+}
+.header.heading{
+    text-align: center;
+    padding: 6pt;
+    border: 8px solid black;
+    border-radius: 12pt;
+    background-color: cadetblue;
+}
+.header.para{
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+.into.para{
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+#js-p{
+    color: cadetblue;
+}
+.into.click.para{
+    color: blue;
+    text-decoration: none;
+    text-shadow: 5px 5px 5px;
+}

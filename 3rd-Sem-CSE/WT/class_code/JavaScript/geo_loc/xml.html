@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para1"></p>
+    <script>
+        var text = "<bookstore>" + "<book>" + "<title>ABC</title>" + "</book>" + "</bookstore>";
+        var parser = new DOMParser();
+        var xmldom = parser.parseFromString(text, "text/xml");
+        var title = xmldom.getElementsByTagName("title")[0];
+        document.getElementById("para1").innerText = title.childNodes[0].nodeValue;
+        var serialise = new XMLSerializer();
+        var sxml = serialise.serializeToString(xmldom);
+        console.log(sxml) 
+
+    </script>
+</body>
+</html>

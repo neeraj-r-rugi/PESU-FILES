@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: red;
+        }
+        #p1{
+            color: black;
+            background-color: aqua;
+        }
+        #p1.pcs2{
+            color: black;
+            background-color: palevioletred;
+        }
+        .pcls{
+            color: aqua;
+            background-color: black;
+        }
+        span>.pcspan{
+            color: orange;
+            background-color: pink;
+        }
+        span .pcspan-2{
+            color: blanchedalmond;
+            background-color: black;
+        }
+        .spam.pcspan-2{
+            color: aquamarine;
+        }
+        a:link{
+            color: cadetblue;
+        }
+        a:active{
+            color: yellowgreen;
+        }
+        ol::first-line{
+            color: coral;
+        }
+        div>span p{
+            color: aqua;
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <p id="p1">これは日本語のロレムイプサムです。</p>
+    <p id="p1" class="pcs2">ಇದು ಕನ್ನಡ ಭಾಷೆಯ ಲೊರೆಮ್ ಇಪ್ಸಮ್.</p>
+    <p class="pcls">Ceci est du Lorem Ipsum en français.</p>
+    <span><p class="pcspan">Dies ist Lorem Ipsum auf Deutsch.</p></span>
+    <span><p class="pcspan-2">Esto es Lorem Ipsum en español.</p></span>
+    <span class="spam"><p class="spam pcspan-2">Questo è Lorem Ipsum in italiano.</p></span>
+    <a href="https://www.youtube.com">Click Me Pls</a>
+    <ol>
+        <li>Send Hlp</li>
+        <li>Hlp Not sent</li>
+    </ol>
+    <div>
+        <span>
+            <p>Loreum Ipsum Dolor SIt Amet</p>
+            <p>Loreum Ipsum Dolor SIt Amet</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </span>
+    </div>
+</body>
+</html>

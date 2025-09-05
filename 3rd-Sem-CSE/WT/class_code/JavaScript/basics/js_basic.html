@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      lang="en"
+    />
+    <title>JavaScript Basics</title>
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./javaScript_basics.js"></script>
+    <script>
+      document.writeln("This is a text from JS!");
+      console.log("In Body");
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <header>
+        <h1 class="header heading">Intro to JavaScript</h1>
+        <p class="header para">The Language of the web!</p>
+        <hr />
+      </header>
+    </div>
+    <div class="intro">
+      <p class="into para">
+        JavaScript is a versatile scripting language primarily used to create
+        interactive and dynamic content on web pages. It enables features such
+        as form validation, animations, and real-time updates, making websites
+        more engaging and user-friendly. JavaScript runs in the browser and is
+        supported by all major web browsers.
+      </p>
+      <p id="js-p"></p>
+      <script>
+        document.getElementById("js-p").innerHTML =
+          "<h3>We Can Modify HTML tags from JS itself</h3>";
+      </script>
+      <a href="#" id="click-1" class="intro click" onclick="alert('Here is your popup.')"><p class="intro click para">Click this for a popup</p></a>
+    </div>
+  </body>
+</html>

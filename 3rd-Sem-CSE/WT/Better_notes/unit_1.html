@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+  <p>Avant</p>
+    <div style="position: relative; left: 50px">
+      <p style="position: absolute">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. (Latin)
+      </p>
+      <p style="position: static">
+        El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja. (Spanish)
+      </p>
+      <p style="position: relative;right: 50px;">
+        Le vif zéphyr jubile sur les kumquats du clown gracieux. (French)
+      </p>
+      <p style="position: fixed;">
+        Der schnelle braune Fuchs springt über den faulen Hund. (German)
+      </p>
+      <button id="butt" onclick="handle_on_click()">Click For Surprise</button>
+    </div>
+    <p style="position: static;">
+        Быстрая коричневая лиса прыгает через ленивую собаку. (Russian)
+      </p>
+      <p style="position: fixed;">
+        快速的棕色狐狸跳过懒狗。 (Chinese)
+      </p>
+      <script>
+        let x = 0;
+        let result = 
+        window.setInterval(()=>{
+            console.log(`Hello World ${x}`);
+            x++;
+        }, 1000);
+        window.setTimeout(()=>{
+            console.log("LMAO");
+        }, 5000);
+        window.clearTimeout();
+
+        function handle_on_click(){
+            const new_p = document.createElement("h3")
+            new_p.setAttribute("class", "test");
+            new_p.innerText = "HOZAAAAAA X: 0; Y: 0";
+            const parent = document.querySelector("body");
+            parent.appendChild(new_p);
+            document.addEventListener("mousemove", handle_mouse);
+        }
+
+        const butt = document.querySelector("#butt");
+        butt.addEventListener("click", lmao);
+        function lmao(){
+            const bu = document.querySelector("#butt");
+            bu.style.color = "red";
+        }
+        function handle_mouse(event){
+            const tt = document.querySelector(".test");
+            if (tt) {
+                let x = event.clientX;
+                let y = event.clientY;
+                tt.innerText = `POZAAAAA X: ${x} Y: ${y}`;
+            }
+        }
+        
+
+      </script>
+  </body>
+</html>
