@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hello(name, callback){
+            
+            return ("Hello, " + name + ' ' + callback());
+        }
+        function sayBye(){
+            return "Byeeee"
+        }
+        document.writeln(hello("Lmao", sayBye))
+        document.writeln(hello("Lmfao", sayBye))
+        document.writeln(hello("Rofll", sayBye))
+    </script>
+</body>
+</html>

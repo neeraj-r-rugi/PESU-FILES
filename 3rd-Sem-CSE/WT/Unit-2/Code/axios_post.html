@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <form id="form">
+        <label>UserName: <br />
+        <input type="text" id="name" name="username" required/>
+    </label>
+    <br />
+    <label>Age: <br />
+        <input type="text" id="age" name="age" required/>
+    </label>
+    <br />
+    <button type="submit">SUBMIT</button>
+    </form>
+    <p id="p1"></p>
+
+    <!--
+    Other Method: 
+    <form onsubmit="sendData(event)" id="form">
+        <label>UserName: <br />
+        <input type="text" id="name" name="username" required/>
+    </label>
+    <br />
+    <label>Age: <br />
+        <input type="text" id="age" name="age" required/>
+    </label>
+    <br />
+    <button type="submit">SUBMIT</button>
+    </form>
+    -->
+    
+    <script>
+        document.getElementById("form").addEventListener("submit", (event)=>{
+            event.preventDefault();
+            sendData();
+        })
+        function sendData(){
+            var UserData = {
+                name: document.getElementById("name").value,
+                age: document.getElementById("age").value
+            };
+            axios.post("https://jsonplaceholder.typicode.com/posts", UserData)
+            .then(response =>{
+                document.getElementById("p1").innerHTML = "sucees: " + response.data.name +", "+ response.data.age;
+            });
+        }
+
+        /* 
+        use this while using stuff.
+        function sendData(event){
+            event.preventDefault();
+            var UserData = {
+                name: document.getElementById("name").value,
+                age: document.getElementById("age").value
+            };
+            axios.post("https://jsonplaceholder.typicode.com/posts", UserData)
+            .then(response =>{
+                document.getElementById("p1").innerHTML = "sucees: " + response.data.name +", "+ response.data.age;
+            });
+        }
+        */
+    </script>    
+</body>
+</html>

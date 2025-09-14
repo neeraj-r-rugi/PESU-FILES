@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            height: 10vh;
+        }
+        table{
+            border: 2px solid black;
+            border-collapse: collapse ;
+            align-items: center;
+        }
+        td, th{
+            border: 2px solid black;
+            border-width: 2px;
+        }
+        /*(<!--The above Items do the same thing as the below depricated tags-->*/
+        .blue{
+            background-color: aliceblue;
+        }
+        .blue.party{
+            background-color: aquamarine;
+        }
+        td{
+            width: 25%;
+        }
+    </style>
+  </head>
+  <body>
+    <table border="1" cellspacing="0" cellpadding="5" width="50%">
+      <tbody>
+        <tr>
+          <th class="blue" colspan="3" style="text-align: left;">Invoice #69420178</th>
+          <th class="blue" style="text-align: left;">14th Jan 2025</th>
+          <th class="blue party" rowspan="8" >Aint No Party Like a Diddy Party</th>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Pay To:<br />
+            Jeffrey's “Definitely-Normal-Getaway”<br /> 1 Secluded Secrets Lane Little
+            Saint James Island St. Thomas, U.S. Virgin Islands 00802-1234
+          </td>
+          <td colspan="2">
+            Customer: <br />Puff Daddy (a.k.a. Diddy) <br />Address: Suite 24/7 Bad Boy
+            Blvd. Take That, St. Thomas, U.S. Virgin Islands 00807
+          </td>
+        </tr>
+        <tr>
+          <td class="blue">Name of Item</td>
+          <td class="blue">QTY</td>
+          <td class="blue">Price per item</td>
+          <td class="blue">cost</td>
+        </tr>
+        <tr>
+            <td>Baby Oil(Johonsons and Johnsons)</td>
+            <td>500</td>
+            <td>100</td>
+            <td>50000</td>
+        </tr>
+        <tr>
+            <td>Machine Oil(Yamazaki Mazak CNC Lubricator)</td>
+            <td>750</td>
+            <td>1000</td>
+            <td>750000</td>
+        </tr>
+        <tr>
+            <td class="blue" colspan="3">Sub-total</td>
+            <td>800000</td>
+        </tr>
+        <tr>
+            <td class="blue" colspan="2">Tax</td>
+            <td>6.9%</td>
+            <td>55200</td>
+        </tr>
+        <tr>
+            <td class="blue" colspan="3">Grand Total</td>
+            <td>855200</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

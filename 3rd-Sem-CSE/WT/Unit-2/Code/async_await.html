@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: antiquewhite;
+      }
+      h1 {
+        text-align: center;
+      }
+      div{
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+      }
+      td {
+        width: 500px;
+        border: 3px solid black;
+        border-radius: 10px;
+        text-align: center;
+        text-transform: capitalize;
+        font-style: italic;
+        font-weight: 350;
+        background-color: aquamarine;
+      }
+      td:hover{
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3), 0 1.5px 3px rgba(0,0,0,0.15);
+      }
+      #yeahh{
+        margin-left: 45%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        border: 5px solid black;
+        border-radius: 10px;
+        background-color: bisque;
+        font-weight: bold;
+        font-size: 16pt;
+        padding: 20px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Async / Await</h1>
+    
+    <div>
+      <table cellspacing="20">
+        <tbody>
+          <tr>
+            <td id="sniff">
+              <label>Async Function:</label>
+              <p id="demo"></p>
+            </td>
+            <td id="feel">
+              <label>Normal Promises:</label>
+              <p id="demo2"></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span id="yeahh" hidden></span>
+    <script>
+      function func1(some) {
+        document.getElementById("demo").innerHTML = some;
+      }
+      function func2(some) {
+        document.getElementById("demo2").innerHTML = some;
+      }
+      function getPromise(x) {
+        return new Promise((resolve, reject) => {
+          if (x === 0) {
+            resolve("Ok Correct");
+          } else {
+            reject("Not Okay.");
+          }
+        });
+      }
+      async function run() {
+        try {
+          let value = await getPromise(1);
+          func1(value);
+        } catch (error) {
+          func1(error);
+        }
+      }
+      //Normal Promises:
+      newProm = getPromise(0);
+      newProm.then(func2).catch(func2);
+      document.getElementById("sniff").addEventListener("click", (event)=>{
+        document.getElementById("yeahh").innerHTML = "Sniff Me";
+        document.getElementById("yeahh").removeAttribute("hidden");
+      })
+      document.getElementById("feel").addEventListener("click", (event)=>{
+        document.getElementById("yeahh").innerHTML = "Feel Me";
+        document.getElementById("yeahh").removeAttribute("hidden");
+      })
+      run();
+    </script>
+  </body>
+</html>
