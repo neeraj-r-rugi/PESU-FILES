@@ -1,0 +1,28 @@
+entity Prob_6_48a_vhdl is
+	port (count: out bit_vector (7 downto 0); clk, reset_b: in bit);
+end Prob_6_48a_vhdl;
+
+architecture Behavioral of Prob_6_48a_vhdl is
+  signal state: integer range 0 to 13;
+begin
+  process (clk, reset_b) begin
+    if (reset_b = '0') then state <= 0; 
+    elsif clk'event and clk = '1' then state <= state + 1;
+    end if;
+  end process;
+	
+  process  (state) begin
+    case (state) is
+      when 0| 2| 4| 6| 8| 10| 12 =>		count <= "00000001";
+      when 1 =>			count <= "00000010";
+      when 3 =>			count <= "00000100";
+      when 5 =>			count <= "00001000";
+      when 7 =>			count <= "00010000";
+      when 9 =>			count <= "00100000";
+      when 11 =>			count <= "01000000";
+      when 13 =>			count <= "10000000";
+      when others =>		count <= "00000000";
+    end case;
+  end process;
+end Behavioral;
+

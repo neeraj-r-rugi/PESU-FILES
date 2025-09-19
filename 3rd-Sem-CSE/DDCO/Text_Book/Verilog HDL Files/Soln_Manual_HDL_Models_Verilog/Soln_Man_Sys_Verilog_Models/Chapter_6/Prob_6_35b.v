@@ -1,0 +1,1 @@
+module Prob_6_35b (output reg [3: 0] A, input [3:0] I, input Load, Clock, Clear);  always @ (posedge Clock)   if (Load) A <= I;  else if (Clear) A <= 4'b0;  //else A <= A;			// redundant statementendmodule;

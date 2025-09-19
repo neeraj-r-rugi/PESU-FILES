@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <label >Name: </label>
+            <input id="text" type="text" name="form-name" value="Nigger" placeholder="Keep Something Nigga"/>
+            <br />
+            <input type="radio" name="form-radio" value="Chigga" />
+            <label>Chigga</label>
+            <br />
+            <input id="daddy" type="radio" name="form-radio" value="Nigga" />
+            <label>Nigga</label>
+            <br />
+            <label>Cinna</label>
+            <input type="checkbox" name="form-check" value="Cinna" />
+            <label>JasonTheWeen</label>
+            <input type="checkbox" name="form-check" value="JasonTheWeen" />
+            <label>Rasputin</label>
+            <input type="checkbox" name="form-check" value="Rasputin" />
+            <br />
+            <input type="submit" value="Get Backshot"/>
+            <input type="reset" value="reser backshot"/>
+            
+        </form>
+    </div>
+    <script>
+        document.querySelector("form").addEventListener("submit", (event)=>{
+            event.preventDefault();
+            alert("Submitted");
+            console.log(document.getElementById("daddy").value)
+        })
+        document.getElementById("text").addEventListener("keypress", (event)=>{
+            console.log("Gay")
+            if(!((document.getElementById("text").value).length <= 20)){
+                alert("Too Long Daddy")
+            }
+        })
+        console.log(document.getElementById("daddy").value)
+    </script>
+</body>
+</html>

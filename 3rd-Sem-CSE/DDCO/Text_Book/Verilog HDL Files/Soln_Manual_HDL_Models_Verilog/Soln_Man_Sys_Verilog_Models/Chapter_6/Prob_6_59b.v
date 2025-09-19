@@ -1,0 +1,1 @@
+module Prob_6_59b (output reg [3:0] STRC, input [3:0] I_par, input Count, Load, CLK, Clear_b);  wire E_bar = !STRC[0];   always @ (posedge CLK) if (Clear_b == 1'b0) STRC <= 4'b0; else    if (Load) STRC <= I_par;    else if (Count) STRC <= {E_bar, STRC[3:1]};endmodule

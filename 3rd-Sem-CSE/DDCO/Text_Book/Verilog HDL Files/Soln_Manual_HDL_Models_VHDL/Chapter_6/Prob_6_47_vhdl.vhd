@@ -1,0 +1,1 @@
+entity Prob_6_47_vhdl is	port (P_odd: buffer bit; D_in, CLK, reset: in bit);end Prob_6_47_vhdl;architecture Behavioral of Prob_6_47_vhdl is	signal D: bit;begin 	D <= D_in xor P_odd;  	process (CLK, reset) begin    	if (reset = '1') 	then P_odd <= '0';    	elsif CLK'event and CLK = '1' then P_odd <= D; 		end if; 	end process; end Behavioral;
