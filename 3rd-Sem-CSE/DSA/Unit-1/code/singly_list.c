@@ -15,7 +15,7 @@ node * allocate(int n){
     node * item = (node *)malloc(n * sizeof(node));
     if(!item){
         printf("Malloc Failed!\n");
-        exit(NODES_TO_ALLOCATE(1));
+        exit(EXIT_FAILURE);
     }
     return item;
 }
@@ -224,6 +224,15 @@ void reverse_list(node ** head){
     node * prev = NULL;
     node * curr = *head;
     node * next = (*head)->link;
+    /*
+        while(curr){
+            prev = curr;
+            next = curr->link;
+            curr->link = prev;
+            curr = next;
+        }
+        (*head) = prev;
+    */
     while(next){
         next = curr->link;
         if(curr == *head){

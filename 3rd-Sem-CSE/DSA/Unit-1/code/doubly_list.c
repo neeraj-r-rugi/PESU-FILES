@@ -106,11 +106,18 @@ void insert_at_pos(node **head, int item, int pos)
         if ((pos - count) != 0)
         {
             printf("The Entered Index is not present in the list.\n");
-            return;;
+            return;
         }
         node *temp = allocate(NODES_TO_ALLOCATE(1));
         temp->data = item;
+        if(curr == NULL){
+            temp->nxt_link = NULL;
+            temp->prev_link = prev;
+            prev->nxt_link = temp;
+            return;
+        }
         temp->nxt_link = curr;
+        curr->prev_link = temp;
         temp->prev_link = prev;
         prev->nxt_link = temp;
         return;
@@ -175,7 +182,7 @@ void delete_from_pos(node ** head, int pos){
     int count = NODE_BEGIN_INDEX;
     node * curr = *head;
     node * prev;
-    while(curr->nxt_link && count < pos){
+    while(curr->nxt_link != NULL && count < pos){
         prev = curr;
         curr = curr->nxt_link;
         count++;
