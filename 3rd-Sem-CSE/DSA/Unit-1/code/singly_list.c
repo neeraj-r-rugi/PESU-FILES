@@ -68,7 +68,7 @@ void insert_at_back(node ** head, int item){
 void insert_at_pos(node ** head, int item, int pos){
     if(pos < NODE_BEGIN_INDEX){
         printf("Invalid Index number. Postion too small to insert.\n");
-        return;;
+        return;
     }else if(pos == NODE_BEGIN_INDEX || !*head){
         if(!*head){
             *head = allocate(NODES_TO_ALLOCATE(1));

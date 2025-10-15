@@ -32,6 +32,7 @@ void dequeue(queue * q){
         printf("The Queue is Empty.\n");
         return;
     }else if(q->front == q->rear){
+        //Check if one element exists
         q->front = q->rear = -1;
     }else{
         q->front = (q->front + 1) % QUEUE_SIZE;
