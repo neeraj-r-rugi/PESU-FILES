@@ -19,7 +19,7 @@ struct Node* createNode(int value) {
 // Recursive insert function
 struct Node* insert(struct Node* root, int value) {
     if (root == NULL)
-        return createNode(value);
+        return createNode(value);//This is the main condition that inserts all node.
 
     if (value < root->data)
         root->left = insert(root->left, value);
@@ -56,17 +56,17 @@ struct Node* deleteNode(struct Node* root, int key) {
         return NULL;
 
     if (key < root->data)
-        root->left = deleteNode(root->left, key);
-    else if (key > root->data)
-        root->right = deleteNode(root->right, key);
+        root->left = deleteNode(root->left, key); // 1 alter the node itself.
+    else if (key > root->data) 
+        root->right = deleteNode(root->right, key); // 1
     else {
-        // Node found, has one or 0 children
+        // !Node found, has one or 0 children
         if (root->left == NULL) {
-            struct Node* temp = root->right;
+            struct Node* temp = root->right; //Return back to 1
             free(root);
             return temp;
         } else if (root->right == NULL) {
-            struct Node* temp = root->left;
+            struct Node* temp = root->left;  //Return back to 1
             free(root);
             return temp;
         }

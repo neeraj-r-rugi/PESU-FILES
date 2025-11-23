@@ -1,5 +1,0 @@
-library IEEE;use IEEE.Std_Logic_1164.all;entity Prob_6_59a_vhdl is	port  (STRC: buffer Std_Logic_vector (3 downto 0); I_par: in Std_Logic_vector (3 downto 0);	Count, Load, CLK, clr_bar: in bit);end Prob_6_59a_vhdl;architecture Structural of Prob_6_59a_vhdl issignal E_bar: Std_Logic; component D_FF port (Q: out Std_Logic; D: in Std_Logic; clk, clr_bar: in bit); end component;beginE_bar <= not STRC(0);M_A: D_FF port map (Q => STRC(3), D => E_bar, clk => clk, clr_bar => clr_bar);M_B: D_FF port map (Q => STRC(2), D => STRC(3), clk => clk, clr_bar => clr_bar);M_C: D_FF port map (Q => STRC(1), D => STRC(2), clk => clk, clr_bar => clr_bar);M_E: D_FF port map (Q => STRC(0), D => STRC(1), clk => clk, clr_bar => clr_bar);end Structural;
-library IEEE;
-use IEEE.Std_Logic_1164.all;
-entity D_FF is	port (Q: out Std_Logic; D: in Std_Logic; clk, clr_bar: in bit);end D_FF;
-architecture Behavioral of D_FF isbegin	process (clk, clr_bar) begin		if clr_bar = '0' then Q <= '0';		elsif clk'event and clk = '1' then Q <= D;		end if;	end process;end Behavioral;

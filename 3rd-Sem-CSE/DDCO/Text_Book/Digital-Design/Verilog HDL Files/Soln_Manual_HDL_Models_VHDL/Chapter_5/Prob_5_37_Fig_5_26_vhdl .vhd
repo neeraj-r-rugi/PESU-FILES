@@ -1,0 +1,7 @@
+
+
+
+entity Prob_5_37_Fig_5_26_vhdl is	port (y: out bit; x_in, clock, reset_b: in bit);
+end Prob_5_37_Fig_5_26_vhdl;	
+
+architecture Behavioral of Prob_5_37_Fig_5_26_vhdl is	  	constant a: Bit_Vector := "000"; 	constant b: Bit_Vector := "001"; 	constant c: Bit_Vector := "010"; 	constant d: Bit_Vector := "011"; 	constant e: Bit_Vector := "100";	signal state, next_state: Bit_Vector (2 downto 0);begin 	process (clock, reset_b) begin    		if reset_b = '0' then state <= a;    		elsif clock'event and clock = '1' then  state <= next_state; end if;	end process; 	process (state, x_in) begin    	y <= '0';    	next_state <= a;      case (state)  is			when a =>	y <= '0'; if x_in = '0' then next_state <= a; else next_state <= b; end if;			when b =>	y <= '0'; if x_in = '0' then next_state <= c; else next_state <= d; end if;	 			when c =>	y <= '0'; if x_in = '0' then next_state <= a; else next_state <= d; end if;			when d =>	if x_in = '0' then y <= '0'; next_state <= e; 							else y <= '1'; next_state <= d; end if; 			when e =>	if x_in = '0' then y <= '0';  next_state <= a; 							else y <= '1'; next_state <= d; end if;			when others =>	next_state <= a;		end case;  	end process;end Behavioral;

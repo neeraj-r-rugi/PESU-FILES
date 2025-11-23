@@ -1,0 +1,8 @@
+library IEEE;use IEEE.Std_Logic_1164.all;use IEEE.Std_Logic_arith.all;entity Prob_8_25b_vhdl  is	generic (dp_width: integer := 5; BC_size: integer := 3);	port (Product: out Std_Logic_vector (2*dp_width downto 0);			Ready, Valid: out Std_Logic; Multiplicand, Multiplier: in Std_Logic_vector(dp_width - 1 downto 0);	 		Start, clock, reset_b: in Std_Logic);							end Prob_8_25b_vhdl;architecture Behavioral of Prob_8_25b_vhdl is		signal Load_regs, Clr_Q_C, Decr_P, Add_regs, Shift_regs, Empty_data,			Empty_m, Zero, Q0: Std_Logic;
+					component Prob_8_25b_Controller_vhdl generic (dp_width: integer; BC_size: integer := 3);			port (Ready, Valid, Load_regs, Clr_Q_C, Decr_P, Add_regs, Shift_regs: out Std_Logic;   					Start, Zero, empty_data, Empty_m, Q0, clock, reset_b: in Std_logic);		end component;
+				component Prob_8_25b_Datapath_vhdl generic (dp_width: integer; BC_size: integer := 3);			port (Product: out Std_Logic_vector (2*dp_width downto 0); Q0, Zero: out Std_Logic;				Empty_data, Empty_m: out Std_Logic;  			Multiplicand, Multiplier: in Std_Logic_vector (dp_width - 1 downto 0); 				
+			Start, Load_regs, Clr_Q_C, Decr_P, Add_regs, Shift_regs, clock, reset_b: in Std_Logic);
+		end component;
+		begin		M0: Prob_8_25b_Controller_vhdl 			generic map (dp_width => 5, BC_size => 3)			port map (Ready, Valid, Load_regs, Clr_Q_C, Decr_P, Add_regs, Shift_regs, Start, 
+			Empty_data, empty_m, Zero, Q0, clock, reset_b);		M1: Prob_8_25b_Datapath_vhdl 			generic map (dp_width => 5, BC_size => 3)			port map (Product, Q0, Zero, Empty_data, Empty_m, Multiplicand, Multiplier,  				Start, Load_regs, Clr_Q_C, Decr_P, Add_regs, Shift_regs, clock, reset_b); 
+				end Behavioral;

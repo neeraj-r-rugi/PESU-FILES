@@ -1,4 +1,0 @@
-Library IEEE;
-use IEEE.Std_Logic_1164.all;
-
-entity Prob_8_41b_Datapath_unit_vhdl is	port (	R0: out Std_Logic_vector (15 downto 0);			Data: in Std_Logic_vector (7 downto 0);	Clr_P1_P0, Ld_P1_P0, Ld_R0, clock, rst: in Std_Logic);end Prob_8_41b_Datapath_unit_vhdl;architecture Behavioral of Prob_8_41b_Datapath_unit_vhdl is	signal 	P1, P0: Std_Logic_vector (7 downto 0);begin 	process (  clock) begin		if clock'event and clock = '1' then			if (Clr_P1_P0 = '1') then P1 <= "00000000"; P0 <= "00000000"; end if;   			if (Ld_P1_P0 = '1') then P1 <= Data; P0 <= P1; end if;    			if (Ld_R0 = '1') then R0 <= P1& P0; end if;		end if;	end process;end Behavioral;
